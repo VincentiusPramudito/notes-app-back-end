@@ -1,5 +1,4 @@
 const Hapi = require('@hapi/hapi');
-// const routes = require('./routes');
 const notes = require('./api/notes');
 const NotesService = require('./services/inMemory/NotesServices');
 
@@ -16,9 +15,6 @@ const init = async () => {
     }
   });
 
-  // server.route(routes);
-
-  // ==> register plugin
   await server.register({
     plugin: notes,
     options: {
