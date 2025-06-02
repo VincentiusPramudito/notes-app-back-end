@@ -1,4 +1,4 @@
-const ClientError = require("../../exceptions/ClientError");
+const ClientError = require('../../exceptions/ClientError');
 
 class NotesHandler {
   constructor(service, validator) {
@@ -14,7 +14,7 @@ class NotesHandler {
 
       const response = h.response({
         status: 'success',
-        message: 'Catatan berhasil ditambahakan',
+        message: 'Catatan berhasil ditambahkan',
         data: { noteId }
       });
       response.code(201);
@@ -89,7 +89,7 @@ class NotesHandler {
 
       return {
         status: 'success',
-        message: 'Catatan berhasil diperbaharui'
+        message: 'Catatan berhasil diperbarui'
       };
     } catch (error) {
       if (error instanceof ClientError) {
