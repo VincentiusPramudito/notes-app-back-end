@@ -3,7 +3,7 @@
  * @param run {() => void | undefined}
  * @returns {Promise<void> | void}
  */
-const up = (pgm) => {
+exports.up = (pgm) => {
   pgm.createTable('authentications', {
     token: {
       type: 'TEXT',
@@ -17,8 +17,6 @@ const up = (pgm) => {
  * @param run {() => void | undefined}
  * @returns {Promise<void> | void}
  */
-const down = (pgm) => {
+exports.down = (pgm) => {
   pgm.dropTable('authentications');
 };
-
-module.exports = { up, down };

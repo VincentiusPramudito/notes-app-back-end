@@ -4,7 +4,7 @@
  * @param run {() => void | undefined}
  * @returns {Promise<void> | void}
  */
-const up = (pgm) => {
+exports.up = (pgm) => {
   pgm.createTable('notes', {
     id: {
       type: 'VARCHAR(50)',
@@ -38,8 +38,6 @@ const up = (pgm) => {
  * @param run {() => void | undefined}
  * @returns {Promise<void> | void}
  */
-const down = (pgm) => {
+exports.down = (pgm) => {
   pgm.dropTable('notes');
 };
-
-module.exports = { up, down };
