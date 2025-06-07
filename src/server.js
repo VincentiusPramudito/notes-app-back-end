@@ -54,12 +54,14 @@ const init = async () => {
       sub: false,
       maxAgeSec: process.env.ACCESS_TOKEN_AGE
     },
-    validate: (artifacts) => ({
-      isValid: true,
-      credentials: {
-        id: artifacts.decoded.payload.id
-      }
-    })
+    validate: (artifacts) => {
+      return {
+        isValid: true,
+        credentials: {
+          id: artifacts.decoded.payload.id
+        }
+      };
+    }
   });
 
   await server.register(
